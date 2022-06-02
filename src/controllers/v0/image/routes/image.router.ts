@@ -12,7 +12,7 @@ router.get('/filteredimage', async (req: Request, res: Response) => {
     }
     try {
       let item = await filterImageFromURL(image_url);
-      setInterval( () => deleteLocalFiles() , 5000)
+      setInterval( () => deleteLocalFiles() , 30000)
       return res.sendFile(item);
     } catch(error) {
       return res.status(404).send({error: error, message: 'Can not get image from url' });
